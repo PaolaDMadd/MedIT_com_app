@@ -45,17 +45,17 @@ Every time a new functioning feature was completed, its branch was merged to the
 ## Inital User Story
 
 ### Must have's 
-    UI
-    - user can create a profile 
-    - user can log in with autentication
-    - user can input data (form)
-    
-    server side:
-    - server receives user data (eg. API call)
-    - server create user profile and store (model user table)
-    - server store user profile with data set (eg. user history table)
-    - server use models to analyze data received (eg. symptoms)
-    - server send to client side the result
+UI
+- user can create a profile 
+- user can log in with autentication
+- user can input data (form)
+
+server side:
+- server receives user data (eg. API call)
+- server create user profile and store (model user table)
+- server store user profile with data set (eg. user history table)
+- server use models to analyze data received (eg. symptoms)
+- server send to client side the result
 
 ## Code Snippets
 ```</>```
