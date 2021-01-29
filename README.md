@@ -5,13 +5,16 @@ The intent of the app is to provide a diagnosis using prediction models that wil
 
 
 ## Installation
-
-* Clone and download this repo.
-
-### Server
-
-* `cd` into server folder.
-* pip
+1. Fork and clone this repo
+2. cd into repo
+3. Install requirements
+   - `pipenv install -r requirements.txt`
+4. Activate your virtual environment
+   - `pipenv shell`
+4. cd into project and start server
+   - `python manage.py runserver` 
+5. See the app in action at
+   - `http://localhost:8000/`
 
 ## Usage 
 
