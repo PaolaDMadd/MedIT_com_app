@@ -1,5 +1,5 @@
 """
-WSGI config for Knock_Knock_Doctor project.
+WSGI config for MedIT_com project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Knock_Knock_Doctor.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MedIT_com.settings')
 
 application = get_wsgi_application()

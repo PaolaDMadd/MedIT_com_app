@@ -1,4 +1,4 @@
-# Knock Knock Doctor app
+# MedIT.com app
 
 ### Description:
 The intent of the app is to provide a diagnosis using prediction models that will analyze the input data.
