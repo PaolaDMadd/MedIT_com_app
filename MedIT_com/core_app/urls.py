@@ -5,5 +5,5 @@ urlpatterns = [
     path('', views.index, name='index'), 
     path('login', views.login, name='login'), 
     path('register', views.register, name='register'),
-    # path('<int:id>/', views.show, name='history-show') # to accept only numbers as id param
+    # path('profile<int:id>/', views.profile, name='profile') # to accept only numbers as id param
 ]
