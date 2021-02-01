@@ -7,9 +7,11 @@
         <input type="submit" value="Login">
     </form>
 
+    <h1>{{id}}</h1>
+
     <span class="helptext">
         Don't yet have an account?
-        <a href="{% url 'signup' %}">Register here</a>
+        <a href="{% url 'register' %}">Register here</a>
     </span>
 {% endblock content %}
 

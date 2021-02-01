@@ -119,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# redirecting rules
+LOGIN_REDIRECT_URL = 'index'
+# protecting routes
+LOGIN_URL = 'login'
