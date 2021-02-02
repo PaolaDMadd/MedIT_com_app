@@ -19,15 +19,15 @@ def profile(request):
     return render(request, 'core_app/profile.html', {"test": test} )
     
 
-@csrf_exempt
+# @csrf_exempt
 def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(data = request.POST)
         if form.is_valid():
-            return redirect()
+            return redirect( )
     else:
         form = AuthenticationForm()
-    return render(request, 'core_app/login.html', {'form': form})
+        return render(request, 'core_app/login.html', {'form': form})
 
 
 # @csrf_exempt
