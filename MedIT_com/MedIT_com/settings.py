@@ -26,7 +26,9 @@ SECRET_KEY = '$%-tm6c0wis=pb(nggm3j4f=d+w4r^(-t+z9cv$q@1#lsvdv&6'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0'
+    '127.0.0.1',
+    '0.0.0.0',
+    'localhost'
 ]
 
 
@@ -39,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'corsheaders',
     'core_app',
     'chatterbot.ext.django_chatterbot'
 ]
@@ -52,7 +54,10 @@ CHATTERBOT = {
 }
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,6 +86,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MedIT_com.wsgi.application'
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

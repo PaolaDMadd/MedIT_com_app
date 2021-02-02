@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.2.10"
+pytz = "==2020.1"
+sqlparse = "==0.3.1"
+Django = "==3.1.5"
+ChatterBot = "==1.0.2"
+django-cors-headers = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
