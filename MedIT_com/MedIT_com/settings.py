@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #actual apps in the project
     'core_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'MedIT_com.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #added this
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# redirecting rules
-LOGIN_REDIRECT_URL = 'index'
-# protecting routes
-LOGIN_URL = 'login'
+
+# # redirecting rules
+# LOGIN_REDIRECT_URL = 'index'
+# # protecting routes
+# LOGIN_URL = 'login'
+
+AUTH_USER_MODEL = 'core_app.User'

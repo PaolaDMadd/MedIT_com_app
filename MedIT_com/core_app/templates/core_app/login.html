@@ -1,13 +1,16 @@
 {% extends "core_app/index.html" %}
 
 {% block content %}
-    <form method="POST">
+
+<h1>Please login here</h1>
+
+    <form method="POST" class="form-group">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Login">
     </form>
 
-    <h1>{{id}}</h1>
+   
 
     <span class="helptext">
         Don't yet have an account?
