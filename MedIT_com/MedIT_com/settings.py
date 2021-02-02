@@ -25,7 +25,9 @@ SECRET_KEY = '$%-tm6c0wis=pb(nggm3j4f=d+w4r^(-t+z9cv$q@1#lsvdv&6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0'
+]
 
 
 # Application definition
@@ -37,8 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core_app'
+
+    'core_app',
+    'chatterbot.ext.django_chatterbot'
 ]
+
+# Chatterbot settings
+
+CHATTERBOT = {
+    'name': 'MediBot',
+    'django_app_name': 'django_chatterbot'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
