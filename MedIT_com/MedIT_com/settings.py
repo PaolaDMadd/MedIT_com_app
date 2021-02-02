@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 from pathlib import Path
 
@@ -67,6 +70,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'MedIT_com.urls'
+
+# SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+
+# TEMPLATES_DIRS = (
+#     os.path.join(SETTINGS_PATH, 'templates')
+# )
 
 TEMPLATES = [
     {
