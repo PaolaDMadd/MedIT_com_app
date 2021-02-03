@@ -121,5 +121,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # redirecting rules
 LOGIN_REDIRECT_URL = 'profile'
+# REGISTER_REDIRECT_URL = 'profile'
 # # protecting routes
 # LOGIN_URL = 'login'
