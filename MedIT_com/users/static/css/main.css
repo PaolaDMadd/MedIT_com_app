@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap');
+
+:root{
+    
+    --font-title: 'Lato', sans-serif;
+    --font-content: 'Poppins', sans-serif;
+    --font-color-content: #1F4027;
+    --font-color-title: #f0b600;
+    --main-background-color: #8abaae;
+}
+
+body{
+    font-family: var(--font-content);
+    font-size: clamp(1rem 2.5vh 2rem);
+    background: var(--main-background-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-content);
+    color: var(--font-color-title);
+    text-align: center;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-container li{
+    margin: 1em;
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color-content);
+}
+
+#main-container{
+    width: 80%;
+    margin: 200px auto;
+}
+
+.footer p{
+    text-align: center;
+}

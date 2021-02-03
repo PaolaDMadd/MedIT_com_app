@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core_app'
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# redirecting rules
+LOGIN_REDIRECT_URL = 'profile'
+# REGISTER_REDIRECT_URL = 'profile'
+# # protecting routes
+# LOGIN_URL = 'login'
