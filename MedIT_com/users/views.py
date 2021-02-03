@@ -35,6 +35,6 @@ def register(req):
 def profile(request):
     user = request.user
     args = {'name': user}
-    return render(request, 'users/profile.html', args )
+    return render(request, 'users/profile.html', args)
 
 
