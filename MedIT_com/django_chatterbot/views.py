@@ -18,8 +18,8 @@ trainer.train([
 
 # Create your views here.
 
-class ChatterBotAppView(TemplateView):
-    template_name='app.html'
+# class ChatterBotAppView(TemplateView):
+#     template_name='app.html'
 
 
 class ChatterBotApiView(View):
