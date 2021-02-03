@@ -1,45 +1,32 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm
-from django.contrib.auth.forms import AuthenticationForm
-from .templates import * 
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from .forms import UserSignupForm
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 
-# @csrf_exempt
-def index(request):
+def home(request):
     msg = 'Welcome to MedIT.Com'
-    return render(request, 'core_app/index.html', {'welcome': msg} )
-
-# @csrf_protect
-def profile(request):
-    test = django.middleware.csrf.get_token()
-    return render(request, 'core_app/profile.html', {"test": test} )
-    
-
-# @csrf_exempt
-def login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(data = request.POST)
-        if form.is_valid():
-            return redirect( )
-    else:
-        form = AuthenticationForm()
-        return render(request, 'core_app/login.html', {'form': form})
+    return render(request, 'pages/home.html', {'welcome': msg} )
 
 
-# @csrf_exempt
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+def register(req):
+    if req.method == 'POST':
+        form = UserSignupForm(req.POST)
         if form.is_valid():
             form.save()
-            first_name = form.cleaned_data.get('first_name')
-            messages.success(request, f'Welcome, {first_name}!')
-            return redirect('core_app/login')
+            username = form.cleaned_data.get('username')
+            messages.success(req, f'Welcome, {username}!')
+            return redirect('home')
     else:
-        form = UserRegisterForm()
+        form = UserSignupForm()
     data = {'form': form}
-    return render(request, 'core_app/register.html', data)
+    return render(req, 'users/register.html', data)
+
+@login_required
+def profile(request):
+    user = request.user
+    args = {'name': user}
+    return render(request, 'users/profile.html', args )
+
+
