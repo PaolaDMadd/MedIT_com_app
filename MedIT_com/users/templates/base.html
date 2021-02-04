@@ -13,6 +13,9 @@
 </head>
 <header> 
     <nav class="navbar navbar-light bg-light" >
+        <a href="{% url 'landingpage' %}">
+            <img id='logo' src="{% static 'css/logo.png' %}" alt='MedIT logo' />
+        </a>
         {% if user.is_authenticated %}
             <span class="navbar-text">Welcome, {{user}}</span>
             <ul class="nav-container">
@@ -31,24 +34,28 @@
     </nav>
 </header>
 <body>
-    {% if user.is_authenticated %}
-
-    <figure>
-        <img id="robot" src="{% static 'css/robot.png' %}" alt="chatbot robot image">
-        <figcaption><p>DocBot says : "Click me to chat!"</p></figcaption>
-    </figure>
     
-    
-    
-    {% endif %}
     <main id="main-container"class="container">
             {% block content %}
             {% endblock content %}
 
             {% block chatbot %}
             {% endblock chatbot %}
-    </main>
-    <footer class="footer">
+   
+
+    {% if user.is_authenticated %}
+
+    <figure>
+        <a href="{% url 'chatbot' %}">
+            <img id="robot" src="{% static 'css/robot.png' %}" alt="chatbot robot image">
+        </a>
+        <figcaption><p>MediBot says : "Click me to chat!"</p></figcaption>
+    </figure>
+    
+    {% endif %}
+</main>
+
+    <footer class="bottom">
         <p> MedIT.Com project is an idea of Kai Tse, Stylianos Thomas and Paola Maddaluno | Futureproof Weiland Cohort 2021</p>
     </footer>
 </body>

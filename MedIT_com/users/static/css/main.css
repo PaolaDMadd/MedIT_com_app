@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 :root{
     
     --font-title: 'Lato', sans-serif;
@@ -35,21 +39,26 @@ h1, h2, h3 {
 a {
     text-decoration: none;
     color: var(--font-color-content);
+    margin: 0;
 }
 
 #main-container{
     width: 80%;
-    margin: 200px auto;
+    margin: 5% auto;
 }
 
 figure{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     float: right;
     right: 0;
     margin:0;
-    padding:0;
+    padding:0; */
+    position: relative;
+    bottom: 0;
+    margin: 50px;
+    right: 0;
 }
 
 figcaption p{
@@ -58,18 +67,21 @@ figcaption p{
 
 }
 #robot{
-    width: 15%;
+    height: 120px;
     object-fit: scale-down;
     margin: 1em;
     float: right;
 }
 
-.footer p{
+.bottom p{
     text-align: center;
 }
 
-.footer{
+.bottom {
+    position: sticky;
     bottom: 0;
+    width: 100%;
+    margin: auto;
 }
 
 form{
@@ -85,4 +97,9 @@ form > label{
 
 form > input{
     margin: 1em;
+}
+
+#logo {
+    height: 75px;
+    object-fit: scale-down;
 }
