@@ -1,0 +1,14 @@
+{% extends 'profile.html' %}
+
+{% block diagnosis %}
+    <h2> This is the diagnosis page</h2>
+    <h3> Please choose up to 5 symptoms:</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+    <p>
+        {{ result }}
+    </p>
+{% endblock diagnosis %}

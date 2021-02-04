@@ -3,15 +3,11 @@ from django.contrib import messages
 from .forms import UserSignupForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
+from diagnosis.templates import *
 
 
 def landingpage(request):
     return render(request, 'pages/landingpage.html')
-
-def home(request):
-    msg = 'Welcome to MedIT.Com'
-    return render(request, 'pages/home.html', {'welcome': msg} )
-
 
 def register(req):
     if req.method == 'POST':
@@ -33,8 +29,4 @@ def register(req):
 
 @login_required
 def profile(request):
-    user = request.user
-    args = {'name': user}
-    return render(request, 'users/profile.html', args )
-
-
+    return render(request, 'profile.html')
