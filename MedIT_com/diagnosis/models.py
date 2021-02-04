@@ -144,7 +144,7 @@ class Symptoms(models.Model):
         return sorted(self.symptoms_choices)
 
 class DataEntry(models.Model):
-    user_id = models.ForeignKey(User, related_name='data', blank=True, null=True, on_delete=models.CASCADE) #here is the class of the user model
+    user_id = models.ForeignKey(User, related_name='data', blank=True, null=True, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
     symptom1 = models.CharField(max_length=50)
     symptom2 = models.CharField(max_length=50)
@@ -154,7 +154,4 @@ class DataEntry(models.Model):
     diagnosis = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{ self.id, self.date, self.diagnosis}'
-
-    def get_user_history(request, id):
-        return 'blah blah'
+        return f'{ self.id, self.user_id, self.date, self.diagnosis}'
