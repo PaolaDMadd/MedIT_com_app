@@ -45,12 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'corsheaders',
     'users',
 
-    'diagnosis.apps.DiagnosisConfig'
+    # 'diagnosis.apps.DiagnosisConfig'
+    'diagnosis',
 
 
-    'corsheaders',
     
     'chatterbot.ext.django_chatterbot'
 

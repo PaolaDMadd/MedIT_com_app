@@ -6,6 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
+from .forms import MessageForm
+
 chatterbot = ChatBot('MediBot')
 
 trainer = ListTrainer(chatterbot)
@@ -45,6 +47,7 @@ def get_response(request):
     response = {'status': None}
 
     if request.method == 'POST':
+        form = MessageForm(request.POST)
         data = json.loads(request.body.decode('utf-8'))
         message = data['message']
 
@@ -53,9 +56,7 @@ def get_response(request):
         response['status'] = 'success'
 
     else:
+        form = MessageForm()
         response['error'] = 'no post data found'
 
-    return HttpResponse(
-        json.dumps(response),
-        content_type='application/json'
-        )
+    return render(request, 'chat.html', {'form': form})
