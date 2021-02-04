@@ -18,6 +18,7 @@
             <ul class="nav-container">
                 <li><a href="{% url 'landingpage' %}"> Home </a></li>
                 <li><a href="{% url 'profile' %}"> Profile </a></li>
+                <li><a href="{% url 'chatbot' %}"> Chatbot </a></li>
                 <li><a href="{% url 'logout' %}"> Logout </a></li>
             </ul>
         {% else %}
@@ -33,6 +34,9 @@
     <main id="main-container"class="container">
             {% block content %}
             {% endblock content %}
+
+            {% block chatbot %}
+            {% endblock chatbot %}
     </main>
     <footer class="footer">
         <p> MedIT.Com project is an idea of Kai Tse, Stylianos Thomas and Paola Maddaluno | Futureproof Weiland Cohort 2021</p>

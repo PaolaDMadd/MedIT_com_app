@@ -47,13 +47,9 @@ INSTALLED_APPS = [
 
     'corsheaders',
     'users',
-
-    # 'diagnosis.apps.DiagnosisConfig'
-    'diagnosis',
-
-
-    
-    'chatterbot.ext.django_chatterbot'
+    'django_chatterbot',
+    'diagnosis.apps.DiagnosisConfig',
+    # 'diagnosis',
 
 ]
 
