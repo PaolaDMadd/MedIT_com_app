@@ -1,11 +1,13 @@
 {
     "_meta": {
         "hash": {
+
             "sha256": "686303b80dbfa04bb2e37d5cfb36d62192070083a4ab07ecaf1939e06c1c2e2e"
         },
         "pipfile-spec": 6,
         "requires": {
             "python_version": "3.9"
+
         },
         "sources": [
             {
@@ -24,6 +26,7 @@
             "index": "pypi",
             "version": "==3.2.10"
         },
+
         "chatterbot": {
             "hashes": [
                 "sha256:139f960654d1dedc3e23d619d92ba10351bc61191c6d555c8ceb859a5f44b56a",
@@ -47,6 +50,7 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==7.1.2"
         },
+        
         "django": {
             "hashes": [
                 "sha256:2d78425ba74c7a1a74b196058b261b9733a8570782f4e2828974777ccca7edf7",
@@ -55,6 +59,7 @@
             "index": "pypi",
             "version": "==3.1.5"
         },
+
         "django-cors-headers": {
             "hashes": [
                 "sha256:1ac2b1213de75a251e2ba04448da15f99bcfcbe164288ae6b5ff929dc49b372f",
@@ -193,6 +198,7 @@
             "index": "pypi",
             "version": "==2020.1"
         },
+
         "pyyaml": {
             "hashes": [
                 "sha256:3d7da3009c0f3e783b2c873687652d83b1bbfd5c88e9813fb7e5b03c0dd3108b",
@@ -269,6 +275,7 @@
             ],
             "version": "==1.2.19"
         },
+
         "sqlparse": {
             "hashes": [
                 "sha256:022fb9c87b524d1f7862b3037e541f68597a730a8843245c349fc93e1643dc4e",
@@ -276,6 +283,7 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
+
         },
         "tqdm": {
             "hashes": [
@@ -284,6 +292,7 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==4.56.0"
+
         }
     },
     "develop": {}

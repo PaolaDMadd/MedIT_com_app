@@ -44,9 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'users',
+
     'corsheaders',
     'core_app',
     'chatterbot.ext.django_chatterbot'
+
 ]
 
 # Chatterbot settings
@@ -148,3 +152,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# redirecting rules
+LOGIN_REDIRECT_URL = 'profile'
+# REGISTER_REDIRECT_URL = 'profile'
+# # protecting routes
+# LOGIN_URL = 'login'
