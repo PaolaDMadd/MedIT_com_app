@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 from pathlib import Path
 
@@ -25,7 +28,11 @@ SECRET_KEY = '$%-tm6c0wis=pb(nggm3j4f=d+w4r^(-t+z9cv$q@1#lsvdv&6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '0.0.0.0',
+    'localhost'
+]
 
 
 # Application definition
@@ -37,11 +44,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'users',
+
+    'corsheaders',
+    'core_app',
+    'chatterbot.ext.django_chatterbot'
+
 ]
 
+# Chatterbot settings
+
+CHATTERBOT = {
+    'name': 'MediBot',
+    'django_app_name': 'django_chatterbot'
+}
+
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -51,6 +74,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'MedIT_com.urls'
+
+# SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+
+# TEMPLATES_DIRS = (
+#     os.path.join(SETTINGS_PATH, 'templates')
+# )
 
 TEMPLATES = [
     {
@@ -70,6 +99,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MedIT_com.wsgi.application'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = 'https://127.0.0.1:8000',
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -119,6 +151,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
 # redirecting rules
 LOGIN_REDIRECT_URL = 'profile'
 # REGISTER_REDIRECT_URL = 'profile'
