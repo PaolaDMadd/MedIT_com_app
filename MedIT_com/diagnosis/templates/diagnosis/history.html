@@ -1,6 +1,12 @@
 {% extends 'profile.html' %}
 
 {% block history %}
-<h2> This is the history page</h2>
-    <p>potato</p>
+<h2> Your medical history:</h2>
+    <ul>
+        {% for entry in userHistory %}
+        <li>
+            At {{ entry.date }} your were diagnosed with {{ entry.diagnosis }}
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock history %}
