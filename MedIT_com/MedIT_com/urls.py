@@ -20,11 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('core_app.urls'))
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
 
-
-urlpatterns = [
-    path('', include('django_chatterbot.urls')),
-    path('admin/', admin.site.urls)
+    path('', include('django_chatterbot.urls'))
 
 ]

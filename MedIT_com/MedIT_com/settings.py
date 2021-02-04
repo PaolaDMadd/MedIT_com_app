@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'users',
 
     'corsheaders',
-    'core_app',
+    
     'chatterbot.ext.django_chatterbot'
 
 ]
