@@ -4,7 +4,8 @@
     
     --font-title: 'Lato', sans-serif;
     --font-content: 'Poppins', sans-serif;
-    --font-color-content: #1F4027;
+    /* #1F4027; */
+    --font-color-content: red;
     --font-color-title: #f0b600;
     --main-background-color: #8abaae;
 }
@@ -41,6 +42,47 @@ a {
     margin: 200px auto;
 }
 
+figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    right: 0;
+    margin:0;
+    padding:0;
+}
+
+figcaption p{
+    float: right;
+    font-size: clamp(0.5rem 2.5vh 1rem);
+
+}
+#robot{
+    width: 15%;
+    object-fit: scale-down;
+    margin: 1em;
+    float: right;
+}
+
 .footer p{
     text-align: center;
+}
+
+.footer{
+    bottom: 0;
+}
+
+form{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form > label{
+    margin: 1em;
+}
+
+form > input{
+    margin: 1em;
 }
