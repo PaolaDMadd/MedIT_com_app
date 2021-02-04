@@ -1,9 +1,7 @@
 from django.conf.urls import url
 from django.contrib import admin
-
-from django_chatterbot.views import  ChatterBotApiView
+from django_chatterbot.views import get_response
 
 urlpatterns = [
-    # url('chatbot/', ChatterBotAppView.as_view(), name='main'),
-    url('api/chatbot/', ChatterBotApiView.as_view(), name='chatbot-api')
+    url('api/chatbot', get_response)
 ]

@@ -95,7 +95,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MedIT_com.wsgi.application'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = 'https://127.0.0.1:8000',
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

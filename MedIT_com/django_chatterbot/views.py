@@ -1,11 +1,10 @@
-# from django.shortcuts import render
+from django.shortcuts import render
+from django.http import HttpResponse
 import json
-from django.views.generic.base import TemplateView
-from django.views.generic import View 
-from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
-# from chatterbot.ext.django_chatterbot import settings
 
 chatterbot = ChatBot('MediBot')
 
@@ -13,51 +12,50 @@ trainer = ListTrainer(chatterbot)
 
 trainer.train([
     'Test 1',
-    'Returning test 1'
+    'Test 1 response',
+    'Test 2',
+    'Test 2 response',
+    'Test 3',
+    'Test 3 response'
 ])
 
-# Create your views here.
+trainer.train([
+    "Hello",
+    "Hi, can I help you?",
+    "I'm allergic to Bacitracin",
+    "You are not allergic to Bacitracin, you do have a mild allergy to Peanuts",
+    "Yes, I have a fever and I have been coughing and sneezing",
+    """Looks like you may have the Common Flu (Influenza), make sure 
+    you get a lot of rest, and drink plenty of fluids, if you are in
+    a lot of pain over the counter painkillers such as ibuprofen can help, 
+    please contact your doctor if your symptoms worsen, or persist for over two weeks.
+    Can I help you with anything else?""",
+    "Yes, I have a cough and lots of mucus",
+    """Looks like you may have a Chest Cold (Acute Bronchitis), make sure
+    you get a lot of rest and drink plenty of fluids, you can take lozenges
+    (if older than 4) or use honey to sooth your throat, please contact your
+    doctor if your symptoms worsen, or persist for over two weeks.
+    Can I help you with anything else?""",
+    "No, thank you",
+    "You're welcome have a nice day!"
+])
 
-# class ChatterBotAppView(TemplateView):
-#     template_name='app.html'
+@csrf_exempt
+def get_response(request):
+    response = {'status': None}
 
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+        message = data['message']
 
-class ChatterBotApiView(View):
-    """ Provide an API endpoint to interact with ChatBot"""
+        chat_response = chatterbot.get_response(message).text
+        response['message'] ={'text': chat_response, 'user': False, 'chat_bot': True}
+        response['status'] = 'success'
 
-    def get(self, request, *args, **kwargs):
-        """Return data corresponding to the current conversation"""
+    else:
+        response['error'] = 'no post data found'
 
-        # return JsonResponse({
-        #     'name': self.chatterbot.name
-        # })
-
-        data = {
-            'detail': 'You should make a POST request to this endpoint'
-        }
-
-        return JsonResponse(data, status=405)
-
-    def post(self, request, *args, **kwargs):
-        """Return a response to the statement in the posted data* The JSON data should contain a text attribute"""
-        
-        # input_data = json.loads(request.body.decode('utf-8'))
-        input_statement = request.POST.get('text')
-
-        # if 'text' not in input_data:
-        #     return JsonResponse({
-        #         'text': [
-        #             'The attribute "text" is required'
-        #         ]
-        #     }, status=400)
-
-        # response = self.chatterbot.get_response(input_data)
-        response_data = {
-            'text': chatterbot.get_response(input_statement)
-        }
-
-        # response_data = response.serialize()
-
-        return JsonResponse(response_data, status=200)
-
-
+    return HttpResponse(
+        json.dumps(response),
+        content_type='application/json'
+        )
