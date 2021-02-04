@@ -12,7 +12,12 @@ pandas = "*"
 numpy = "*"
 sklearn = "*"
 
+ChatterBot = "==1.0.2"
+django-cors-headers = "*"
+
+
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
+
