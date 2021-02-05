@@ -15,26 +15,17 @@ chatterbot = ChatBot('MediBot')
 trainer = ListTrainer(chatterbot)
 
 trainer.train([
-    'Test 1',
-    'Test 1 response',
-    'Test 2',
-    'Test 2 response',
-    'Test 3',
-    'Test 3 response'
-])
-
-trainer.train([
     "Hello",
     "Hi, can I help you?",
     "I'm allergic to Bacitracin",
     "You are not allergic to Bacitracin, you do have a mild allergy to Peanuts",
-    "Yes, I have a fever and I have been coughing and sneezing",
+    "Flu: Fever coughing sneezing",
     """Looks like you may have the Common Flu (Influenza), make sure 
     you get a lot of rest, and drink plenty of fluids, if you are in
     a lot of pain over the counter painkillers such as ibuprofen can help, 
     please contact your doctor if your symptoms worsen, or persist for over two weeks.
     Can I help you with anything else?""",
-    "Yes, I have a cough and lots of mucus",
+    "Chest Cold: Chesty coughing",
     """Looks like you may have a Chest Cold (Acute Bronchitis), make sure
     you get a lot of rest and drink plenty of fluids, you can take lozenges
     (if older than 4) or use honey to sooth your throat, please contact your
@@ -42,6 +33,8 @@ trainer.train([
     Can I help you with anything else?""",
     "No, thank you",
     "You're welcome have a nice day!"
+    "I love you",
+    "I love you too"
 ])
 
 @csrf_exempt
