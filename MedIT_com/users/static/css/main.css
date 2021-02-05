@@ -9,15 +9,15 @@
     --font-title: 'Lato', sans-serif;
     --font-content: 'Poppins', sans-serif;
     /* #1F4027; */
-    --font-color-content: red;
-    --font-color-title: #f0b600;
+    --font-color-content: #1F4027;
+    --font-color-title: #1F4027;
     --main-background-color: #8abaae;
 }
 
 body{
     font-family: var(--font-content);
     font-size: clamp(1rem 2.5vh 2rem);
-    background: var(--main-background-color);
+    /* background: var(--main-background-color); */
 }
 
 h1, h2, h3 {
@@ -41,24 +41,28 @@ a {
     color: var(--font-color-content);
     margin: 0;
 }
+a:hover{
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+    color: var(--font-color-content);
+}
 
 #main-container{
     width: 80%;
     margin: 5% auto;
+ 
 }
 
-figure{
-    /* display: flex;
+.container-img{
+    height: fit-content;
+    width: 20%;
+    display:flex;
     flex-direction: column;
-    justify-content: center;
+     position: fixed; 
+    top: 200px;
+    right: 0; 
     float: right;
-    right: 0;
-    margin:0;
-    padding:0; */
-    position: relative;
-    bottom: 0;
-    margin: 50px;
-    right: 0;
 }
 
 figcaption p{
@@ -73,16 +77,17 @@ figcaption p{
     float: right;
 }
 
-.bottom p{
+#footerText{
     text-align: center;
+    padding: 0.2em;
+    vertical-align: middle;
+
 }
 
-.bottom {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    margin: auto;
+.footer, .navbar{
+    background: var(--main-background-color);
 }
+
 
 form{
     width: 50%;
@@ -102,4 +107,8 @@ form > input{
 #logo {
     height: 75px;
     object-fit: scale-down;
+}
+
+.btn{
+    background: var(--main-background-color);
 }

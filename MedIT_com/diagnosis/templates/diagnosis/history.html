@@ -5,8 +5,9 @@
     <ul>
         {% for entry in userHistory %}
         <li>
-            At {{ entry.date }} your were diagnosed with {{ entry.diagnosis }}
+           <p> At {{ entry.date }} your were diagnosed with {{ entry.diagnosis }} </p>
         </li>
         {% endfor %}
     </ul>
 {% endblock history %}
+
