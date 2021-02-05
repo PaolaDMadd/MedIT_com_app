@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block chatbot %}
+<h2>Hi my name is MediBot, please enter your symptoms or diagnosis</h2>
+<br></br>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+<p>
+    {{ message }}
+</p>
+{% endblock chatbot %}
